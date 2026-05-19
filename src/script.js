@@ -1,7 +1,7 @@
 // Skapa objektet contactBook
 const contactBook = {
   owner: "Anna López",
-  contacts: [
+  contacts: [ 
     {
       name: "Ahmed Ali",
       phone: "070-1234567",
@@ -26,7 +26,7 @@ const contactBook = {
 };
   
   // Ange en grupp
-  let groupToShow;
+  let groupToShow = "arbete";
   
 
 
@@ -36,10 +36,13 @@ function showContacts(contactBook, groupToShow) { // Rör ej denna kod
 
 
     // Loopar igenom alla kontakter och jämför grupp
+    for (contact of contactBook.contacts){
+      if (contact.group === groupToShow){
+        let res = `Namn: ${contact.name}, Telefon: ${contact.phone}`;
+        return res;
+      }
+    }
    
-    return  // här ska sträng med namn och tekefonnummer visas i form av string interpolation
-
-
 }
 
 
